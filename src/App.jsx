@@ -4,6 +4,8 @@ import Banner from './Banner/Banner'
 import Login from './Login/Login'
 import NavBar from './NavBar/NavBar'
 import ToyCard from "./Card/ToyCard";
+import Registration from './Registration/Registration';
+import MyProfile from './Myprofile/MyProfile';
 
 function App() {
   const toyData = {
@@ -15,12 +17,24 @@ function App() {
 };
 
 
+const userData = {
+  name: "John Doe",
+  email: "johndoe@example.com",
+  photo: "https://randomuser.me/api/portraits/men/75.jpg",
+  phone: "+1 555-1234",
+  address: "New York, USA",
+};
+
+
+
   return (
     <>
     <NavBar></NavBar>
     <Banner></Banner>
     <Login></Login>
     <ToyCard toy={toyData} />
+    <Registration></Registration>
+    <MyProfile user={userData} />
     </>
   )
 }

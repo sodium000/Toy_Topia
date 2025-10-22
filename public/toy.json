@@ -1,5 +1,8 @@
 [
   {
+    "toyId": 1,
+    "toyName": "Lego Classic Bricks",
+    "sellerName": "Toys R Us Local",
     "sellerEmail": "contact@toysruslocal.com",
     "price": 49.99,
     "rating": 4.7,
@@ -9,6 +12,9 @@
     "subCategory": "Building Blocks"
   },
   {
+    "toyId": 2,
+    "toyName": "Plush Teddy Bear",
+    "sellerName": "Funzone Kids",
     "sellerEmail": "shop@funzonekids.com",
     "price": 29.99,
     "rating": 4.5,
@@ -18,6 +24,9 @@
     "subCategory": "Soft Toys"
   },
   {
+    "toyId": 3,
+    "toyName": "Speed Racer RC Car",
+    "sellerName": "RC Playtime",
     "sellerEmail": "info@rcplaytime.com",
     "price": 89.99,
     "rating": 4.8,
@@ -27,6 +36,9 @@
     "subCategory": "Remote Control Toys"
   },
   {
+    "toyId": 4,
+    "toyName": "Wooden Puzzle Set",
+    "sellerName": "Educate Kids",
     "sellerEmail": "sales@educatekids.com",
     "price": 24.5,
     "rating": 4.3,
@@ -36,6 +48,9 @@
     "subCategory": "Educational Toys"
   },
   {
+    "toyId": 5,
+    "toyName": "Smart Coding Robot",
+    "sellerName": "Toy Castle",
     "sellerEmail": "support@toycastle.com",
     "price": 59.0,
     "rating": 4.9,
@@ -45,6 +60,9 @@
     "subCategory": "Robotics"
   },
   {
+    "toyId": 6,
+    "toyName": "Dino Adventure Set",
+    "sellerName": "Toys World",
     "sellerEmail": "contact@toysworld.com",
     "price": 19.99,
     "rating": 4.2,
@@ -54,6 +72,9 @@
     "subCategory": "Action Figures"
   },
   {
+    "toyId": 7,
+    "toyName": "Creative Art Kit",
+    "sellerName": "Crafty Kids",
     "sellerEmail": "hello@craftykids.com",
     "price": 34.99,
     "rating": 4.6,
@@ -63,6 +84,9 @@
     "subCategory": "Arts & Crafts"
   },
   {
+    "toyId": 8,
+    "toyName": "Baby Rattle Toy",
+    "sellerName": "Baby Star",
     "sellerEmail": "sales@babystar.com",
     "price": 15.99,
     "rating": 4.4,
@@ -72,6 +96,9 @@
     "subCategory": "Baby Toys"
   },
   {
+    "toyId": 9,
+    "toyName": "Foam Dart Blaster",
+    "sellerName": "Outdoor Kidz",
     "sellerEmail": "info@outdoorkidz.com",
     "price": 54.99,
     "rating": 4.5,
@@ -81,6 +108,9 @@
     "subCategory": "Outdoor Toys"
   },
   {
+    "toyId": 10,
+    "toyName": "Magnetic Tile Set",
+    "sellerName": "Fantasy Toys",
     "sellerEmail": "contact@fantasytoys.com",
     "price": 39.99,
     "rating": 4.7,
@@ -90,6 +120,9 @@
     "subCategory": "STEM Toys"
   },
   {
+    "toyId": 11,
+    "toyName": "Dream Dollhouse",
+    "sellerName": "Dollhouse Hub",
     "sellerEmail": "support@dollhousehub.com",
     "price": 44.99,
     "rating": 4.6,
@@ -99,6 +132,9 @@
     "subCategory": "Dollhouses"
   },
   {
+    "toyId": 12,
+    "toyName": "Scenic Jigsaw Puzzle",
+    "sellerName": "Puzzle Master",
     "sellerEmail": "info@puzzlemaster.com",
     "price": 22.99,
     "rating": 4.3,
@@ -108,6 +144,9 @@
     "subCategory": "Puzzles"
   },
   {
+    "toyId": 13,
+    "toyName": "Mini Car Collection",
+    "sellerName": "Mini Car World",
     "sellerEmail": "shop@minicarworld.com",
     "price": 27.5,
     "rating": 4.5,
@@ -117,6 +156,9 @@
     "subCategory": "Vehicles"
   },
   {
+    "toyId": 14,
+    "toyName": "Kids Music Set",
+    "sellerName": "Music Kids",
     "sellerEmail": "sales@musickids.com",
     "price": 32.0,
     "rating": 4.4,
@@ -126,6 +168,9 @@
     "subCategory": "Musical Toys"
   },
   {
+    "toyId": 15,
+    "toyName": "Classic Board Game",
+    "sellerName": "Board Fun",
     "sellerEmail": "hello@boardfun.com",
     "price": 35.99,
     "rating": 4.8,

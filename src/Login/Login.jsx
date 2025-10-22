@@ -56,7 +56,7 @@ const Login = () => {
                                     e.preventDefault()
                                     settoggle(!toggle)
 
-                                }} >{toggle ? <IoIosEyeOff className="btn btn-xs rounded-full  absolute right-1.5 bottom-[8px] z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn btn-xs rounded-full absolute right-1.5 bottom-[8px] z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}</button>
+                                }} >{toggle ? <IoIosEyeOff className="btn btn-xs rounded-full border-0  absolute right-1.5 bottom-[8px] z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn border-0 btn-xs rounded-full absolute right-1.5 bottom-[8px] z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}</button>
                             </div>
 
                             <button  type="submit" className="my-btn">

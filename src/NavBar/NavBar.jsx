@@ -14,6 +14,7 @@ const NavBar = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <li><a>Home</a></li>
                         <li><a>About</a></li>
+                        <li><a>MyProfile</a></li>
                     </ul>
                 </div>
                     <h1 className='text-black text-2xl '>ToyTopia</h1>
@@ -22,6 +23,7 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className='font-bold text-blue-700'><a>Home</a></li>
                         <li className='font-bold text-blue-700'><a>About</a></li>
+                        <li className='font-bold text-blue-700'><a>MyProfile</a></li>
                     </ul>
                 </div>
                 <div className="flex gap-5">
