@@ -1,0 +1,137 @@
+[
+  {
+    "sellerEmail": "contact@toysruslocal.com",
+    "price": 49.99,
+    "rating": 4.7,
+    "availableQuantity": 75,
+    "description": "A timeless set of colorful Lego bricks that encourages creativity and problem-solving. Kids can build anything they imagine, from houses to vehicles.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2016/03/31/20/11/lego-1297582_1280.png",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "sellerEmail": "shop@funzonekids.com",
+    "price": 29.99,
+    "rating": 4.5,
+    "availableQuantity": 120,
+    "description": "A cute plush teddy bear that provides comfort and warmth to children of all ages.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2016/03/27/22/22/teddy-bear-1284956_1280.jpg",
+    "subCategory": "Soft Toys"
+  },
+  {
+    "sellerEmail": "info@rcplaytime.com",
+    "price": 89.99,
+    "rating": 4.8,
+    "availableQuantity": 40,
+    "description": "High-speed remote control car with rechargeable battery and shock absorbers for off-road fun.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/07/17/22/43/rc-car-2518130_1280.jpg",
+    "subCategory": "Remote Control Toys"
+  },
+  {
+    "sellerEmail": "sales@educatekids.com",
+    "price": 24.5,
+    "rating": 4.3,
+    "availableQuantity": 95,
+    "description": "Wooden puzzle set that helps children learn shapes and colors through fun interaction.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/03/23/12/29/puzzle-2162646_1280.jpg",
+    "subCategory": "Educational Toys"
+  },
+  {
+    "sellerEmail": "support@toycastle.com",
+    "price": 59.0,
+    "rating": 4.9,
+    "availableQuantity": 50,
+    "description": "Interactive talking robot that teaches basic coding concepts and plays educational games.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2016/06/06/17/05/robot-1431529_1280.jpg",
+    "subCategory": "Robotics"
+  },
+  {
+    "sellerEmail": "contact@toysworld.com",
+    "price": 19.99,
+    "rating": 4.2,
+    "availableQuantity": 150,
+    "description": "A set of colorful plastic dinosaurs for fun pretend play and learning prehistoric creatures.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2014/11/27/22/27/dinosaur-548458_1280.jpg",
+    "subCategory": "Action Figures"
+  },
+  {
+    "sellerEmail": "hello@craftykids.com",
+    "price": 34.99,
+    "rating": 4.6,
+    "availableQuantity": 80,
+    "description": "DIY art and craft kit that includes paints, brushes, and stencils for creative expression.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/01/11/10/27/kids-1966013_1280.jpg",
+    "subCategory": "Arts & Crafts"
+  },
+  {
+    "sellerEmail": "sales@babystar.com",
+    "price": 15.99,
+    "rating": 4.4,
+    "availableQuantity": 200,
+    "description": "Colorful rattle toy that stimulates a baby's sense of sound and touch.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2018/03/28/15/46/baby-3272185_1280.jpg",
+    "subCategory": "Baby Toys"
+  },
+  {
+    "sellerEmail": "info@outdoorkidz.com",
+    "price": 54.99,
+    "rating": 4.5,
+    "availableQuantity": 60,
+    "description": "Foam dart blaster gun that provides safe and action-packed outdoor fun.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2018/05/06/20/44/toy-3377181_1280.jpg",
+    "subCategory": "Outdoor Toys"
+  },
+  {
+    "sellerEmail": "contact@fantasytoys.com",
+    "price": 39.99,
+    "rating": 4.7,
+    "availableQuantity": 90,
+    "description": "Magnetic building tiles that promote STEM learning and imaginative play.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2020/02/04/22/46/magnetic-4818460_1280.jpg",
+    "subCategory": "STEM Toys"
+  },
+  {
+    "sellerEmail": "support@dollhousehub.com",
+    "price": 44.99,
+    "rating": 4.6,
+    "availableQuantity": 70,
+    "description": "Miniature dollhouse with furniture, decorations, and lighting for creative storytelling.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2018/03/14/15/04/dollhouse-3225015_1280.jpg",
+    "subCategory": "Dollhouses"
+  },
+  {
+    "sellerEmail": "info@puzzlemaster.com",
+    "price": 22.99,
+    "rating": 4.3,
+    "availableQuantity": 130,
+    "description": "500-piece jigsaw puzzle with a scenic landscape, perfect for family bonding time.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2016/10/24/17/34/puzzle-1762009_1280.jpg",
+    "subCategory": "Puzzles"
+  },
+  {
+    "sellerEmail": "shop@minicarworld.com",
+    "price": 27.5,
+    "rating": 4.5,
+    "availableQuantity": 110,
+    "description": "Die-cast miniature car collection featuring sports and classic models.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2015/12/09/00/29/car-1083238_1280.jpg",
+    "subCategory": "Vehicles"
+  },
+  {
+    "sellerEmail": "sales@musickids.com",
+    "price": 32.0,
+    "rating": 4.4,
+    "availableQuantity": 85,
+    "description": "Kids’ musical instrument set including a tambourine, xylophone, and maracas.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/08/10/01/25/music-2618453_1280.jpg",
+    "subCategory": "Musical Toys"
+  },
+  {
+    "sellerEmail": "hello@boardfun.com",
+    "price": 35.99,
+    "rating": 4.8,
+    "availableQuantity": 100,
+    "description": "Classic family board game that helps improve strategy and teamwork skills.",
+    "pictureURL": "https://cdn.pixabay.com/photo/2017/09/06/14/51/board-game-2729640_1280.jpg",
+    "subCategory": "Board Games"
+  }
+]
