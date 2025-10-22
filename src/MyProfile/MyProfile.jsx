@@ -1,5 +1,9 @@
 import React from "react";
 
+    // const safeArray = Array.isArray(data) ? data : []
+    // const highData = [...safeArray].sort((a,b)=>b.ratingAvg - a.ratingAvg);
+    // const ratingData = highData.slice(0,8);
+
 const MyProfile = ({ user }) => {
   const { name, email, photo, phone, address } = user || {};
 
