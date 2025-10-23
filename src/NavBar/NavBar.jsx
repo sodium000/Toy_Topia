@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const NavBar = () => {
     return (
-        <div className='container mx-auto'>
-            <div className=" mt-1 navbar bg-linear-to-r from-indigo-300 via-sky-400 rounded-sm to-pink-400 shadow-sm justify-between">
+        <div className=''>
+            <div className="  navbar bg-linear-to-r from-indigo-300 via-sky-400  to-pink-400 shadow-sm justify-around">
                 <div className="flex">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -11,23 +12,23 @@ const NavBar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li><a>Home</a></li>
-                        <li><a>About</a></li>
-                        <li><a>MyProfile</a></li>
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/about'>About</Link></li>
+                        <li><Link to='/myprofile'>MyProfile</Link></li>
                     </ul>
                 </div>
-                    <h1 className='text-black text-2xl '>ToyTopia</h1>
+                    <Link to='/' className='text-black text-2xl '>ToyTopia</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li className='font-bold text-blue-700'><a>Home</a></li>
-                        <li className='font-bold text-blue-700'><a>About</a></li>
-                        <li className='font-bold text-blue-700'><a>MyProfile</a></li>
+                        <li className='font-bold text-blue-700'><Link to='/'>Home</Link></li>
+                        <li className='font-bold text-blue-700'><Link to='/about'>About</Link></li>
+                        <li className='font-bold text-blue-700'><Link to='/myprofile'>MyProfile</Link></li>
                     </ul>
                 </div>
                 <div className="flex gap-5">
-                    <button className="btn btn-soft btn-primary px-10">Login</button>
+                    <Link to="/login" className="btn btn-soft btn-primary px-10">Login</Link>
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar tooltip tooltip-bottom tooltip-success" data-tip={"tonmoy"}>
                             <div className="w-10 rounded-full">
@@ -40,12 +41,12 @@ const NavBar = () => {
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li>
-                                <a className="justify-between">
+                                <Link className="justify-between">
                                     Profile
-                                </a>
+                                </Link>
                             </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
+                            <li><Link>Settings</Link></li>
+                            <li><Link>Logout</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
+import { Link } from 'react-router';
 
 const Registration = () => {
     const [toggle, settoggle] = useState(false)
@@ -45,6 +46,7 @@ const Registration = () => {
                                 <input
                                     type="text"
                                     name='image'
+                                    placeholder="Photo URL"
                                     className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400 pt-2"
                                 />
                             </div>
@@ -53,7 +55,7 @@ const Registration = () => {
                                 <input
                                     type="email"
                                     name="email"
-                                    placeholder="example@email.com"
+                                    placeholder="example@gmail.com"
                                     className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
                                 />
                             </div>
@@ -72,7 +74,7 @@ const Registration = () => {
                                     e.preventDefault()
                                     settoggle(!toggle)
 
-                                }} >{toggle ? <IoIosEyeOff className="btn btn-xs border-0 rounded-full  absolute right-1.5 bottom-[8px] z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn btn-xs border-0 rounded-full absolute right-1.5 bottom-[8px] z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}</button>
+                                }} >{toggle ? <IoIosEyeOff className="btn btn-xs border-0 rounded-full  absolute right-1.5 bottom-2 z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn btn-xs border-0 rounded-full absolute right-1.5 bottom-2 z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}</button>
                             </div>
                             <button type="submit" className="my-btn">
                                 Resgistration
@@ -85,12 +87,12 @@ const Registration = () => {
                             <div className="text-center mt-3">
                                 <p className="text-sm text-white/80">
                                     Already have an account?{" "}
-                                    <a
-                                        to="/auth"
+                                    <Link
+                                        to="/login"
                                         className="text-pink-300 hover:text-white font-medium underline"
                                     >
                                         Login
-                                    </a>
+                                    </Link>
                                 </p>
                             </div>
                         </form>
