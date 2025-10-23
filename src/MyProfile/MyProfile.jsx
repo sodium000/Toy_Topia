@@ -1,19 +1,17 @@
 import React from "react";
 
-    // const safeArray = Array.isArray(data) ? data : []
-    // const highData = [...safeArray].sort((a,b)=>b.ratingAvg - a.ratingAvg);
-    // const ratingData = highData.slice(0,8);
+    
 
 const MyProfile = ({ user }) => {
-  const { name, email, photo, phone, address } = user || {};
+  const { name, email, photo, address } = user || {};
 
   return (
-     <div className="min-h-screen bg-linear-to-br from-blue-100  to-indigo-900 flex items-center justify-center py-10 px-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-100  to-indigo-900 flex items-center justify-center py-10 px-4">
       <div className="relative max-w-md w-full bg-white/70 backdrop-blur-md border border-gray-200 rounded-3xl shadow-xl overflow-hidden p-8 text-center">
 
         <div className="absolute inset-0 -z-10 opacity-10 bg-[radial-gradient(circle_at_top,var(--tw-gradient-stops))] from-blue-900 via-pink-100 to-transparent"></div>
 
- 
+
         <div className="flex justify-center mb-5">
           <div className="relative">
             <img
