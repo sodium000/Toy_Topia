@@ -1,12 +1,12 @@
 import React from 'react';
-import NavBar from '../NavBar/NavBar';
-import MyProfile from '../MyProfile/MyProfile';
+import MyProfile from '../Myprofile/MyProfile';
+
+
 
 const Profilepage = () => {
     return (
         <div>
-            <NavBar></NavBar>
-            <MyProfile></MyProfile>
+            
         </div>
     );
 };

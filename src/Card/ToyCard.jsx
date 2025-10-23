@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router";
+import AuthContext from "../AuthContext/AuthContext";
 
 const ToyCard = ({ ratingData }) => {
-    console.log(ratingData.toyName)
-
     return (
         <div  className="max-w-sm mb-10 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-sky-300 p-4">
             {/* Thumbnail */}
@@ -27,9 +27,11 @@ const ToyCard = ({ ratingData }) => {
 
                 <p className="text-lg font-bold text-blue-600">${ratingData.price}</p>
 
-                <button className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition-colors">
+                <Link to={`/toydetails/${ratingData.toyId}`}>
+                    <button className="w-full mt-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition-colors" >
                     View More
                 </button>
+                </Link>
             </div>
         </div>
     );
