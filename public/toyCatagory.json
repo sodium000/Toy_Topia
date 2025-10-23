@@ -1,18 +1,22 @@
 [
   {
     "id": 0,
-    "name": "Soft & Baby Toys"
+    "name": "All"
   },
   {
     "id": 1,
-    "name": "Outdoor & Action"
+    "name": "Soft & Baby Toys"
   },
   {
     "id": 2,
-    "name": "Creative & Interactive"
+    "name": "Outdoor & Action"
   },
   {
     "id": 3,
+    "name": "Creative & Interactive"
+  },
+  {
+    "id": 4,
     "name": "Building & Educational"
   }
 ]

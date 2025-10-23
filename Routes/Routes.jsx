@@ -6,6 +6,9 @@ import Registration from '../src/Registration/Registration'
 import PrivateLayout from '../src/Layout/PrivateLayout'
 import MyProfile from "../src/Myprofile/MyProfile";
 import ToyDetails from '../src/ToyDetailes/ToyDetails'
+import Alltoypage from "../src/Pages/Alltoypage";
+import ToyPage from "../src/Pages/toyPage";
+// import Alltoy from "../src/Home/Alltoy";
 
 
 
@@ -46,6 +49,17 @@ const router = createBrowserRouter([
         element: <PrivateLayout><ToyDetails></ToyDetails></PrivateLayout>,
         loader: () => fetch("/toy.json"),
       
+    },
+    {
+        path: "/alltoy",
+        element:<Alltoypage></Alltoypage>,
+        children:[
+            {
+                path:":name",
+                Component : ToyPage,
+                loader: () => fetch("/toy.json")
+            },
+        ]
     },
     {
         path: '/*',

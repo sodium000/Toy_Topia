@@ -33,6 +33,7 @@ const NavBar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
                             <li><Link to='/'>Home</Link></li>
                             <li><Link to='/about'>About</Link></li>
+                            <li className='font-bold text-blue-700'><Link to='/alltoy/All'>AllToy</Link></li>
                             {
                                 user && <li><Link to='/myprofile'>MyProfile</Link></li>
                             }
@@ -44,6 +45,7 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1">
                         <li className='font-bold text-blue-700'><Link to='/'>Home</Link></li>
                         <li className='font-bold text-blue-700'><Link to='/about'>About</Link></li>
+                        <li className='font-bold text-blue-700'><Link to='/alltoy/All'>AllToy</Link></li>
                         {
                             user && <li className='font-bold text-blue-700'><Link to='/myprofile'>MyProfile</Link></li>
                         }
