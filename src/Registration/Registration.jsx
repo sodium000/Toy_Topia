@@ -4,6 +4,7 @@ import { IoIosEyeOff } from "react-icons/io";
 import { Link, useNavigate } from 'react-router';
 import AuthContext from '../AuthContext/AuthContext';
 import Swal from 'sweetalert2'
+import { updateProfile } from 'firebase/auth';
 
 const Registration = () => {
     const [toggle, settoggle] = useState(false)
@@ -15,11 +16,17 @@ const Registration = () => {
         event.preventDefault()
         const Email = event.target.email.value;
         const Name = event.target.name.value;
-        const Photp_URl = event.target.image.value;
+        const Photo_URl = event.target.image.value;
         const Password = event.target.password.value;
-        console.log(Email, Name, Photp_URl, Password)
+        
 
-        RegWithEmail(Email, Password).then(() => {
+        RegWithEmail(Email, Password).then((result) => {
+            const newUser = result.user
+                updateProfile(newUser, {
+            displayName: Name, photoURL: Photo_URl
+            }).then(()=>{
+            setUser(newUser)
+            })
             Swal.fire({
                 title: "Drag me!",
                 icon: "success",

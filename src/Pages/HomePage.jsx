@@ -9,6 +9,8 @@ const HomePage = () => {
 
         const data = use(toydata);
 
+        
+
 
     const safeArray = Array.isArray(data) ? data : []
     const highData = [...safeArray].sort((a,b)=>b.rating - a.rating);
