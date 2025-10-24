@@ -1,12 +1,13 @@
 import React, { use, useState } from 'react';
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import AuthContext from '../AuthContext/AuthContext';
 import Swal from 'sweetalert2'
 
 const Registration = () => {
     const [toggle, settoggle] = useState(false)
+    let navigate = useNavigate();
 
     const { RegWithEmail,setUser,SignByGoogle } = use(AuthContext);
 
@@ -18,13 +19,14 @@ const Registration = () => {
         const Password = event.target.password.value;
         console.log(Email, Name, Photp_URl, Password)
 
-        RegWithEmail(Email, Password).then((userCredential) => {
-            setUser(userCredential.user)
+        RegWithEmail(Email, Password).then(() => {
             Swal.fire({
                 title: "Drag me!",
                 icon: "success",
                 draggable: true
+                
             });
+            navigate(`${location.state ? location.state : "/"}`);
         })
             .catch((error) => {
                 console.log(error)
@@ -40,6 +42,7 @@ const Registration = () => {
                     icon: "success",
                     draggable: true
                 });
+                navigate(`${location.state ? location.state : "/"}`);
                 
             }).catch((error) => {
                 console.log(error)

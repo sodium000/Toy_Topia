@@ -8,23 +8,23 @@ import Swal from 'sweetalert2';
 
 const Login = () => {
     const [toggle, settoggle] = useState(false)
+    const [Emails, setEmail] = useState()
     let navigate = useNavigate();
 
-    const { Login,user, setUser, SignByGoogle } = use(AuthContext)
+    const { Login,setUser, SignByGoogle } = use(AuthContext)
 
     const location = useLocation();
-    console.log(location)
 
     const GoogleSingIn = () => {
         SignByGoogle().then((result) => {
-        setUser(result.user);
-        Swal.fire({
+            setUser(result.user);
+            Swal.fire({
                 title: "Drag me!",
                 icon: "success",
                 draggable: true
             });
-            navigate(`${location.state? location.state : "/"}`);
-            
+            navigate(`${location.state ? location.state : "/"}`);
+
         }).catch((error) => {
             console.log(error)
         });
@@ -41,15 +41,12 @@ const Login = () => {
                 icon: "success",
                 draggable: true
             });
-            navigate(`${location.state? location.state : "/"}`);
+            navigate(`${location.state ? location.state : "/"}`);
         })
             .catch((error) => {
                 console.log(error)
             });
     }
-
-    console.log(user)
-
     return (
         <>
             <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-500 via-indigo-600 to-purple-600 relative overflow-hidden">
@@ -83,6 +80,8 @@ const Login = () => {
                                 <input
                                     type="email"
                                     name="email"
+                                    defaultValue={null}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     placeholder="example@email.com"
                                     className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 />
@@ -110,9 +109,9 @@ const Login = () => {
                                 <svg aria-label="Google logo" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
                                 Login with Google
                             </button>
-                            <button className="text-sm text-pink-300/90 mt-3 hover:text-white underline cursor-pointer">
+                            <Link to='/forgotpassword' state={{ myValue: Emails }}  className="text-sm text-pink-300/90 mt-3 hover:text-white underline cursor-pointer">
                                 Forgot Password
-                            </button>
+                            </Link>
 
                             <p className="text-center text-sm text-white/80 mt-3">
                                 Don’t have an account?{" "}

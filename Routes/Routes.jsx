@@ -8,7 +8,8 @@ import MyProfile from "../src/Myprofile/MyProfile";
 import ToyDetails from '../src/ToyDetailes/ToyDetails'
 import Alltoypage from "../src/Pages/Alltoypage";
 import ToyPage from "../src/Pages/toyPage";
-// import Alltoy from "../src/Home/Alltoy";
+import Forgotpassword from "../src/ForgotPassword/Forgotpassword";
+
 
 
 
@@ -31,6 +32,12 @@ const router = createBrowserRouter([
             {
                 path: "/registration",
                 Component: Registration
+
+            },
+            {
+                path: '/forgotpassword',
+                element: <Forgotpassword></Forgotpassword>
+
             }
         ]
     },
@@ -39,6 +46,7 @@ const router = createBrowserRouter([
         element: <div>this is about</div>
 
     },
+
     {
         path: '/myprofile',
         element: <PrivateLayout><MyProfile></MyProfile></PrivateLayout>
@@ -48,15 +56,15 @@ const router = createBrowserRouter([
         path: "/toydetails/:id",
         element: <PrivateLayout><ToyDetails></ToyDetails></PrivateLayout>,
         loader: () => fetch("/toy.json"),
-      
+
     },
     {
         path: "/alltoy",
-        element:<Alltoypage></Alltoypage>,
-        children:[
+        element: <Alltoypage></Alltoypage>,
+        children: [
             {
-                path:":name",
-                Component : ToyPage,
+                path: ":name",
+                Component: ToyPage,
                 loader: () => fetch("/toy.json")
             },
         ]

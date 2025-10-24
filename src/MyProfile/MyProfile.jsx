@@ -12,7 +12,7 @@ const MyProfile = () => {
   const {user, setUser, loading} = use(AuthContext) 
   const [newDisplayName, setNewDisplayName] = useState(user?.displayName || "guest user");
   const [currentPhotoURL, setCurrentPhotoURL] = useState(user?.photoURL);
-  console.log(user)
+
 
   if (loading) {
     return <Loader />;
@@ -37,8 +37,6 @@ const MyProfile = () => {
   setIsUpdating(false)
 })
   };
-
-  console.log(newDisplayName,currentPhotoURL )
 
   return (
 
