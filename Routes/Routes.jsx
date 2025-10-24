@@ -9,6 +9,7 @@ import ToyDetails from '../src/ToyDetailes/ToyDetails'
 import Alltoypage from "../src/Pages/Alltoypage";
 import ToyPage from "../src/Pages/toyPage";
 import Forgotpassword from "../src/ForgotPassword/Forgotpassword";
+import Error from "../src/Error/Error";
 
 
 
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/*',
-        element: <h1>this is error</h1>
+        Component: Error
 
     }
 

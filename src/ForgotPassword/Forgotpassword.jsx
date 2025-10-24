@@ -45,7 +45,7 @@ const Forgotpassword = () => {
 
     return (
         <div>
-            <div className=" h-[846px] bg-gradient-to-br from-amber-400 via-fuchsia-500 to-violet-800  w-full flex items-center justify-center  p-4 backdrop-blur-sm transition-opacity duration-300">
+            <div className=" h-[846px] bg-linear-to-br from-amber-400 via-fuchsia-500 to-violet-800  w-full flex items-center justify-center  p-4 backdrop-blur-sm transition-opacity duration-300">
                 <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-sm transform scale-100 transition-transform duration-300 relative border-t-8 border-blue-500">
                     <h3 className="text-2xl font-bold mb-6 text-gray-800 text-center">Reset Your Password</h3>
 
