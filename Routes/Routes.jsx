@@ -10,6 +10,7 @@ import ToyPage from "../src/Pages/toyPage";
 import Forgotpassword from "../src/ForgotPassword/Forgotpassword";
 import Error from "../src/Error/Error";
 import MyProfile from "../src/MyProfile/MyProfile";
+import AboutUs from "../src/AboutUs/AboutUs";
 
 
 
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/about',
-        element: <div>this is about</div>
+        element: <AboutUs></AboutUs>
 
     },
 
