@@ -9,7 +9,7 @@ const NavBar = () => {
     const singout = () => {
         Logout().then(() => {
             Swal.fire({
-                title: "Drag me!",
+                title: "LogOut your Account",
                 icon: "success",
                 draggable: true
 

@@ -7,9 +7,7 @@ const toydata = fetch('/toy.json').then(res => res.json());
 
 const HomePage = () => {
 
-        const data = use(toydata);
-
-        
+    const data = use(toydata);
 
 
     const safeArray = Array.isArray(data) ? data : []
@@ -19,8 +17,9 @@ const HomePage = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className='my-10 container mx-auto'>
-                <p className='text-3xl font-bold text-center mb-30'>Populer Toy's</p>
+            <div className='bg-[radial-gradient(circle,rgba(238,174,202,1)_0%,rgba(148,187,233,1)_100%)]'>
+                <div className=' container mx-auto'>
+                <p className='text-3xl font-bold text-center py-10'>Populer Toy's</p>
                 <div className='grid'>
                     <section className='main grid grid-cols-3'>
                         {ratingData.map((toy, index) => (
@@ -29,7 +28,7 @@ const HomePage = () => {
                     </section>
                 </div>
             </div>
-            
+            </div>
         </div>
     );
 };

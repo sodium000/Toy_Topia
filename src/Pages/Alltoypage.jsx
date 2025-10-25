@@ -7,15 +7,17 @@ import LeftHome from '../Home/LeftHome';
 const Alltoypage = () => {
     return (
         <div>
-            <nav className='container mx-auto'>
+            <nav className=''>
                 <NavBar></NavBar>
             </nav>
-                <main className='container mx-auto my-5 grid grid-cols-12 '>
+             <div className='bg-[radial-gradient(circle,rgba(238,174,202,1)_0%,rgba(148,187,233,1)_100%)]'>
+                   <main className='container mx-auto py-5 grid grid-cols-12 '>
                     <aside className='col-span-2 sticky top-0 h-0' >
                         <LeftHome></LeftHome>
                     </aside>
                     <Outlet></Outlet>  
                 </main>
+             </div>
         </div>
     );
 };

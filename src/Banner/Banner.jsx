@@ -1,50 +1,44 @@
 import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import './styles.css';
 
-import { EffectCoverflow, Pagination } from 'swiper/modules';
-import NavBar from '../NavBar/NavBar';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 const Banner = () => {
     return (
-        <div className='ton w-6/12 mx-auto'>
+        <div className='ton'>
             <Swiper
-                effect={'coverflow'}
-                grabCursor={true}
+                spaceBetween={30}
                 centeredSlides={true}
-                slidesPerView={'auto'}
-                coverflowEffect={{
-                    rotate: 50,
-                    stretch: 0,
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: true,
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
                 }}
-                pagination={true}
-                modules={[EffectCoverflow, Pagination]}
+                pagination={{
+                    clickable: true,
+                }}
+                // navigation={true}
+                modules={[Autoplay, Pagination]}
                 className="mySwiper"
             >
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                    {/* componet add kora jabe */}
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </SwiperSlide>
+                <SwiperSlide><div className='h-[500px]'>
+                    <img src="https://i.ibb.co/Qv3wr1YT/disney-banneroriginal-66f8edd0eb03-original-format-webp.webp" alt="" />
+                    </div></SwiperSlide>
+                <SwiperSlide><div className='h-[500px]'>
+                    <img src="https://i.ibb.co/9kcqNqN1/Strip-Banner-5-original-format-webp.webp" alt="" />
+                    </div></SwiperSlide>
+                <SwiperSlide><div className='h-[500px]'>
+                    <img src="https://i.ibb.co/YFFxnkCh/50-damaged-box1-4.webp" alt="" />
+                    </div></SwiperSlide>
+                <SwiperSlide><div className='h-[500px]'>
+                    <img src="https://i.ibb.co/GQzcS1Qk/Labubu-Toy-Collection-Cover.webp" alt="" />
+                    </div></SwiperSlide>
             </Swiper>
         </div>
     );
