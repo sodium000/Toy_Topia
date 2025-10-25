@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from "../Banner/Banner"
 import ToyCard from '../Card/ToyCard'
 import { use } from 'react';
+import Extra1 from './Extra1';
+import Blog from './Blog';
 
 const toydata = fetch('/toy.json').then(res => res.json());
 
@@ -20,13 +22,19 @@ const HomePage = () => {
             <div className='bg-[radial-gradient(circle,rgba(238,174,202,1)_0%,rgba(148,187,233,1)_100%)]'>
                 <div className=' container mx-auto'>
                 <p className='text-3xl font-bold text-center py-10'>Populer Toy's</p>
-                <div className='grid'>
-                    <section className='main grid grid-cols-3'>
+                <div className='grid '>
+                    <section className='mainc grid grid-cols-3 '>
                         {ratingData.map((toy, index) => (
                             <ToyCard key={toy.toyId || index} ratingData={toy} />
                         ))}
-                    </section>
+                    </section>  
                 </div>
+                <section >
+                        <Extra1></Extra1>
+                    </section>
+                    <section>
+                        <Blog></Blog>
+                    </section>
             </div>
             </div>
         </div>

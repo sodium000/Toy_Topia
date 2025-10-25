@@ -11,7 +11,7 @@ const Login = () => {
     const [Emails, setEmail] = useState()
     let navigate = useNavigate();
 
-    const { Login,setUser, SignByGoogle } = use(AuthContext)
+    const { Login, setUser, SignByGoogle } = use(AuthContext)
 
     const location = useLocation();
 
@@ -30,7 +30,7 @@ const Login = () => {
         });
     }
 
-    const SignIn = (event) => {
+    const SignIn = (event) => { 
         event.preventDefault()
         const Email = event.target.email.value;
         const Password = event.target.password.value;
@@ -44,7 +44,27 @@ const Login = () => {
             navigate(`${location.state ? location.state : "/"}`);
         })
             .catch((error) => {
-                console.log(error)
+                if (error.code === "auth/invalid-credential") {
+                    Swal.fire({
+                        title: "User Not Found",
+                        icon: "error",
+                        draggable: true
+                    });
+                }
+                if (error.code === "auth/missing-password") {
+                    Swal.fire({
+                        title: "Please Input Password",
+                        icon: "error",
+                        draggable: true
+                    });
+                }
+                if (error.code === "auth/invalid-email") {
+                    Swal.fire({
+                        title: "Give Your Email ",
+                        icon: "error",
+                        draggable: true
+                    });
+                }
             });
     }
     return (
@@ -102,14 +122,15 @@ const Login = () => {
                                 }} >{toggle ? <IoIosEyeOff className="btn btn-xs rounded-full border-0  absolute right-1.5 bottom-2 z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn border-0 btn-xs rounded-full absolute right-1.5 bottom-2 z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}</button>
                             </div>
 
-                            <button type="submit" className="my-btn">
+                            <button type="submit" className="my-btn mb-5">
                                 Login
                             </button>
-                            <button onClick={GoogleSingIn} className="my-btn border-[#e5e5e5]">
+                        </form>
+                        <button onClick={GoogleSingIn} className="my-btn border-[#e5e5e5]">
                                 <svg aria-label="Google logo" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
                                 Login with Google
                             </button>
-                            <Link to='/forgotpassword' state={{ myValue: Emails }}  className="text-sm text-pink-300/90 mt-3 hover:text-white underline cursor-pointer">
+                            <Link to='/forgotpassword' state={{ myValue: Emails }} className="text-sm text-pink-300/90 mt-3 hover:text-white underline cursor-pointer">
                                 Forgot Password
                             </Link>
 
@@ -121,7 +142,6 @@ const Login = () => {
                                     Sign up
                                 </Link>
                             </p>
-                        </form>
                     </div>
                 </div>
             </div>

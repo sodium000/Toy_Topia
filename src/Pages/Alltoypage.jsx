@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import { Outlet} from 'react-router';
 import LeftHome from '../Home/LeftHome';
+import Footer from '../Footer/Footer';
 
 
 const Alltoypage = () => {
@@ -18,6 +19,7 @@ const Alltoypage = () => {
                     <Outlet></Outlet>  
                 </main>
              </div>
+             <Footer></Footer>
         </div>
     );
 };

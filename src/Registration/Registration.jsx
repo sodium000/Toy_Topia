@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { Link, useNavigate } from 'react-router';
@@ -7,10 +7,24 @@ import Swal from 'sweetalert2'
 import { updateProfile } from 'firebase/auth';
 
 const Registration = () => {
+    const newErrors = {};
+    const formRef = useRef(null);
+
+
+    // regular expresion 
+    const nameRegex = /^[A-Za-z\s]+$/;
+    // eslint-disable-next-line no-useless-escape
+    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    const [errors, setErrors] = useState({});
+
+
     const [toggle, settoggle] = useState(false)
+    const [Ctoggle, setCtoggle] = useState(false)
     let navigate = useNavigate();
 
-    const { RegWithEmail,setUser,SignByGoogle } = use(AuthContext);
+    const { RegWithEmail, setUser, SignByGoogle } = use(AuthContext);
 
     const NewUser = (event) => {
         event.preventDefault()
@@ -18,49 +32,77 @@ const Registration = () => {
         const Name = event.target.name.value;
         const Photo_URl = event.target.image.value;
         const Password = event.target.password.value;
-        
+        const confirmPassword = event.target.confirmPassword.value
 
-        RegWithEmail(Email, Password).then((result) => {
-            const newUser = result.user
+
+        if (!nameRegex.test(Name)) {
+            newErrors.name = "Name can only contain letters and spaces";
+            setErrors(newErrors)
+        }
+        else if (!emailRegex.test(Email)) {
+            newErrors.email = "Enter a valid email address";
+            setErrors(newErrors)
+        }
+        else if (!passwordRegex.test(Password)) {
+            newErrors.password = "Password must be 8+ chars, include upper, lower, number & symbol";
+            setErrors(newErrors)
+        }
+
+        else if (confirmPassword !== Password) {
+            newErrors.confirmPassword = "Passwords do not match";
+            setErrors(newErrors)
+        }
+
+        else {
+
+            RegWithEmail(Email, Password).then((result) => {
+                const newUser = result.user
                 updateProfile(newUser, {
-            displayName: Name, photoURL: Photo_URl
-            }).then(()=>{
-            setUser(newUser)
+                    displayName: Name, photoURL: Photo_URl
+                }).then(() => {
+                    setUser(newUser)
+                })
+                Swal.fire({
+                    title: "Create Account Successfully",
+                    icon: "success",
+                    draggable: true
+
+                });
+                navigate(`${location.state ? location.state : "/"}`);
             })
-            Swal.fire({
-                title: "Create Account Successfully",
-                icon: "success",
-                draggable: true
-                
-            });
-            navigate(`${location.state ? location.state : "/"}`);
-        })
-            .catch((error) => {
-                console.log(error)
-            });
+                .catch((error) => {
+                    if (error.code === "auth/email-already-in-use") {
+                        Swal.fire({
+                            title: "Allready have a account",
+                            icon: "info",
+                            draggable: true
+                        });
+                        formRef.current.reset()
+                    }
+                });
+        }
 
     }
 
     const GoogleSingIn = () => {
-            SignByGoogle().then((result) => {
+        SignByGoogle().then((result) => {
             setUser(result.user);
             Swal.fire({
-                    title: "Create Account Successfully",
-                    icon: "success",
-                    draggable: true
-                });
-                navigate(`${location.state ? location.state : "/"}`);
-                
-            }).catch((error) => {
-                console.log(error)
+                title: "Create Account Successfully",
+                icon: "success",
+                draggable: true
             });
-        }
+            navigate(`${location.state ? location.state : "/"}`);
+
+        }).catch((error) => {
+            console.log(error)
+        });
+    }
 
 
     return (
         <div>
             <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-500 via-purple-600 to-pink-500 relative overflow-hidden">
-                {/* Animated floating circles */}
                 <div className="absolute inset-0">
                     <div className="absolute w-72 h-72 bg-pink-400/30 rounded-full blur-2xl top-10 left-10 animate-pulse"></div>
                     <div className="absolute w-72 h-72 bg-purple-400/30 rounded-full blur-2xl bottom-10 right-10 animate-pulse"></div>
@@ -83,7 +125,7 @@ const Registration = () => {
                             Sign Up
                         </h2>
 
-                        <form onSubmit={NewUser} className="space-y-4">
+                        <form ref={formRef} onSubmit={NewUser} className="space-y-4">
                             <div>
                                 <label className="block text-sm font-medium mb-1">User Name</label>
                                 <input
@@ -91,7 +133,11 @@ const Registration = () => {
                                     name="name"
                                     placeholder="UserName"
                                     className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+                                    required
                                 />
+                                {
+                                    errors.name && <p className="text-red-500 text-sm">{errors.name}</p>
+                                }
                             </div>
                             <div>
                                 <label className="block text-sm font-medium mb-1">Image</label>
@@ -100,7 +146,9 @@ const Registration = () => {
                                     name='image'
                                     placeholder="Photo URL"
                                     className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400 pt-2"
+
                                 />
+
                             </div>
                             <div>
                                 <label className="block text-sm font-medium mb-1">Email</label>
@@ -109,7 +157,11 @@ const Registration = () => {
                                     name="email"
                                     placeholder="example@gmail.com"
                                     className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+                                    required
                                 />
+                                {
+                                    errors.email && <p className="text-red-500 text-sm">{errors.email}</p>
+                                }
                             </div>
 
                             <div className="relative">
@@ -121,12 +173,39 @@ const Registration = () => {
                                     name="password"
                                     placeholder="••••••••"
                                     className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+                                    required
                                 />
                                 <button onClick={(e) => {
                                     e.preventDefault()
                                     settoggle(!toggle)
 
-                                }} >{toggle ? <IoIosEyeOff className="btn btn-xs border-0 rounded-full  absolute right-1.5 bottom-2 z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn btn-xs border-0 rounded-full absolute right-1.5 bottom-2 z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}</button>
+                                }} >{toggle ? <IoIosEyeOff className="btn btn-xs border-0 rounded-full  absolute right-1.5 top-8 z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn btn-xs border-0 rounded-full absolute right-1.5 top-8  z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}
+                                </button>
+                                {
+                                    errors.password && <p className="text-red-500 text-sm">{errors.password}</p>
+                                }
+                            </div>
+
+
+                            <div className="relative">
+                                <label className="block text-sm font-medium mb-1">
+                                    Confirm  Password
+                                </label>
+                                <input
+                                    type={Ctoggle ? "text" : "password"}
+                                    name="confirmPassword"
+                                    placeholder="Re-enter password"
+                                    className="input input-bordered w-full bg-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-pink-400"
+                                    required
+                                />
+                                <button onClick={(e) => {
+                                    e.preventDefault()
+                                    setCtoggle(!Ctoggle)
+
+                                }} >{Ctoggle ? <IoIosEyeOff className="btn btn-xs border-0 rounded-full  absolute right-1.5 top-8  z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" /> : <IoIosEye className="btn btn-xs border-0 rounded-full absolute right-1.5 top-8  z-10 bg-linear-to-br from-orange-600 via-purple-600 to-pink-500" />}</button>
+                                {
+                                    errors.confirmPassword && <p className="text-red-500 text-sm">{errors.confirmPassword}</p>
+                                }
                             </div>
                             <button type="submit" className="my-btn">
                                 Resgistration
