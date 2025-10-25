@@ -19,7 +19,7 @@ const Login = () => {
         SignByGoogle().then((result) => {
             setUser(result.user);
             Swal.fire({
-                title: "Drag me!",
+                title: "LogIn Sunccess",
                 icon: "success",
                 draggable: true
             });
@@ -37,7 +37,7 @@ const Login = () => {
         Login(Email, Password).then((result) => {
             setUser(result.user)
             Swal.fire({
-                title: "Drag me!",
+                title: "LogIn Success",
                 icon: "success",
                 draggable: true
             });

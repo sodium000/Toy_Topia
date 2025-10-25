@@ -28,7 +28,7 @@ const Registration = () => {
             setUser(newUser)
             })
             Swal.fire({
-                title: "Drag me!",
+                title: "Create Account Successfully",
                 icon: "success",
                 draggable: true
                 
@@ -41,11 +41,11 @@ const Registration = () => {
 
     }
 
-     const GoogleSingIn = () => {
+    const GoogleSingIn = () => {
             SignByGoogle().then((result) => {
             setUser(result.user);
             Swal.fire({
-                    title: "Drag me!",
+                    title: "Create Account Successfully",
                     icon: "success",
                     draggable: true
                 });

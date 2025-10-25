@@ -4,12 +4,12 @@ import HomePage from "../src/Pages/HomePage";
 import Login from '../src/Login/Login'
 import Registration from '../src/Registration/Registration'
 import PrivateLayout from '../src/Layout/PrivateLayout'
-import MyProfile from "../src/Myprofile/MyProfile";
 import ToyDetails from '../src/ToyDetailes/ToyDetails'
 import Alltoypage from "../src/Pages/Alltoypage";
 import ToyPage from "../src/Pages/toyPage";
 import Forgotpassword from "../src/ForgotPassword/Forgotpassword";
 import Error from "../src/Error/Error";
+import MyProfile from "../src/MyProfile/MyProfile";
 
 
 
