@@ -4,9 +4,11 @@ import { IoIosEye, IoIosEyeOff } from 'react-icons/io';
 import { Link, useLocation, useNavigate } from 'react-router';
 import AuthContext from '../AuthContext/AuthContext';
 import Swal from 'sweetalert2';
+import { useTitle } from "../CustomeHook/Hook";
 
 
 const Login = () => {
+    useTitle("Login")
     const [toggle, settoggle] = useState(false)
     const [Emails, setEmail] = useState()
     let navigate = useNavigate();

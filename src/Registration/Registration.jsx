@@ -5,8 +5,11 @@ import { Link, useNavigate } from 'react-router';
 import AuthContext from '../AuthContext/AuthContext';
 import Swal from 'sweetalert2'
 import { updateProfile } from 'firebase/auth';
+import { useTitle } from "../CustomeHook/Hook";
 
 const Registration = () => {
+    useTitle("Regiestion")
+
     const newErrors = {};
     const formRef = useRef(null);
 

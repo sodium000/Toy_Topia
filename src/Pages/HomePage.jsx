@@ -4,11 +4,12 @@ import ToyCard from '../Card/ToyCard'
 import { use } from 'react';
 import Extra1 from './Extra1';
 import Blog from './Blog';
+import { useTitle } from "../CustomeHook/Hook";
 
 const toydata = fetch('/toy.json').then(res => res.json());
 
 const HomePage = () => {
-
+    useTitle("Home");
     const data = use(toydata);
 
 

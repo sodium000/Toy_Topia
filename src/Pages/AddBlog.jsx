@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
+import { useTitle } from "../CustomeHook/Hook";
 
 const AddBlog = () => {
+    useTitle("AddBlog")
       let navigate = useNavigate();
     return (
         <div>

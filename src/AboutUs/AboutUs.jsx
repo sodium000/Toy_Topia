@@ -1,8 +1,11 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
+import {useTitle} from '../CustomeHook/Hook'
+
 
 const AboutUs = () => {
+    useTitle("AboutUs")
     return (
         <div>
             <NavBar></NavBar>
@@ -13,7 +16,7 @@ const AboutUs = () => {
                     </div>
                     <div className="absolute right-0 top-0 h-full hidden md:block">
                         <img
-                            src="https://i.ibb.co/NYwBdyx/people-illustration.png"
+                            src="https://i.ibb.co/n8rxr8RT/attachment-138432570.png"
                             alt="Career Illustration"
                             className="h-full object-contain opacity-90"
                         />

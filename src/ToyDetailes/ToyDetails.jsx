@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 import Swal from "sweetalert2";
+import { useTitle } from "../CustomeHook/Hook";
 
 const ToyDetails = () => {
+    
     const [toy, settoy] = useState({});
     const { id } = useParams();
     const data = useLoaderData();
+
+    useTitle(`${toy.toyName}`)
 
 
     useEffect(() => {

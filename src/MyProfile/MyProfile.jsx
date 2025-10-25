@@ -5,10 +5,12 @@ import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import Loader from "../Loader/Loader";
 import Swal from "sweetalert2";
+import { useTitle } from "../CustomeHook/Hook";
 
 
 
 const MyProfile = () => {
+  useTitle("Myprofile")
   const [isUpdating, setIsUpdating] = useState(false);
   const { user, setUser, loading, Logout } = use(AuthContext)
   const [newDisplayName, setNewDisplayName] = useState(user?.displayName || "guest user");
@@ -19,7 +21,7 @@ const MyProfile = () => {
     return <Loader />;
   }
 
-       const singout = () => {
+    const singout = () => {
             Logout().then(() => {
                 Swal.fire({
                     title: "LogOut your Account",

@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-b border-gray-700">
                 <div>
                     <img
-                        src="https://i.ibb.co/JstDJzM/rfl-logo.png"
+                        src="https://i.ibb.co/n8rxr8RT/attachment-138432570.png"
                         alt="RFL Logo"
                         className="w-16 mb-3"
                     />

@@ -9,12 +9,12 @@ const PrivateLayout = ({children}) => {
     const location = useLocation();
     const {user,loading}=use(AuthContext);
 
-          if (loading) {
+        if (loading) {
         return (<div className='h-screen flex justify-center items-center'>
             <span className="loading loading-spinner text-success"></span>
         </div>)
     }
-     if (user && user?.email) {
+    if (user && user?.email) {
         return( <>
             <NavBar></NavBar>
             {children}
