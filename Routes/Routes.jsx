@@ -11,6 +11,7 @@ import Forgotpassword from "../src/ForgotPassword/Forgotpassword";
 import Error from "../src/Error/Error";
 import MyProfile from "../src/MyProfile/MyProfile";
 import AboutUs from "../src/AboutUs/AboutUs";
+import AddBlog from "../src/Pages/AddBlog";
 
 
 
@@ -70,6 +71,12 @@ const router = createBrowserRouter([
                 loader: () => fetch("/toy.json")
             },
         ]
+    },
+
+    {
+        path: '/addblog',
+        element: <PrivateLayout> <AddBlog></AddBlog></PrivateLayout> //extra route
+
     },
     {
         path: '/*',

@@ -4,12 +4,13 @@ import AuthContext from "../AuthContext/AuthContext";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import Loader from "../Loader/Loader";
+import Swal from "sweetalert2";
 
-    
+
 
 const MyProfile = () => {
   const [isUpdating, setIsUpdating] = useState(false);
-  const {user, setUser, loading} = use(AuthContext) 
+  const { user, setUser, loading, Logout } = use(AuthContext)
   const [newDisplayName, setNewDisplayName] = useState(user?.displayName || "guest user");
   const [currentPhotoURL, setCurrentPhotoURL] = useState(user?.photoURL);
 
@@ -18,24 +19,27 @@ const MyProfile = () => {
     return <Loader />;
   }
 
-  if (!user) {
-    return (
-      <div className="min-h-screen bg-linear-to-br from-blue-100 to-indigo-900 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Please log in to view your profile</h2>
-        </div>
-      </div>
-    );
-  }
+       const singout = () => {
+            Logout().then(() => {
+                Swal.fire({
+                    title: "LogOut your Account",
+                    icon: "success",
+                    draggable: true
+    
+                });
+            }).catch((error) => {
+                console.log(error)
+            });
+        }
 
-  const handleUpdate=()=>{
+  const handleUpdate = () => {
 
     updateProfile(auth.currentUser, {
-  displayName: newDisplayName, photoURL: currentPhotoURL
-}).then(()=>{
-  setUser(auth.currentUser)
-  setIsUpdating(false)
-})
+      displayName: newDisplayName, photoURL: currentPhotoURL
+    }).then(() => {
+      setUser(auth.currentUser)
+      setIsUpdating(false)
+    })
   };
 
   return (
@@ -53,7 +57,7 @@ const MyProfile = () => {
                 currentPhotoURL ||
                 "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
               }
-              alt="User Profile" 
+              alt="User Profile"
               className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-lg ring-4 ring-blue-300 transition-transform duration-300 hover:scale-105"
             />
             <div className="absolute bottom-0 right-0 bg-green-500 w-4 h-4 rounded-full border-2 border-white animate-pulse"></div>
@@ -69,7 +73,7 @@ const MyProfile = () => {
           >
             <span className="mr-2">✏️</span> Update Profile
           </button>
-          <button className="bg-transparent border-2 border-red-500 text-red-500 py-3 px-8 rounded-full font-bold hover:bg-red-500 hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+          <button onClick={singout} className="bg-transparent border-2 border-red-500 text-red-500 py-3 px-8 rounded-full font-bold hover:bg-red-500 hover:text-white transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
             <span className="mr-2">🚪</span> Logout
           </button>
         </div>
@@ -79,8 +83,8 @@ const MyProfile = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 backdrop-blur-sm transition-opacity duration-300">
           <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-sm transform scale-100 transition-transform duration-300 relative border-t-8 border-blue-500">
             <h3 className="text-2xl font-bold mb-6 text-gray-800 text-center">Update Your Profile</h3>
-            
-            <form onSubmit={(e) => { e.preventDefault();handleUpdate();}}>
+
+            <form onSubmit={(e) => { e.preventDefault(); handleUpdate(); }}>
               <div className="mb-4">
                 <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 text-left mb-1">Display Name</label>
                 <input

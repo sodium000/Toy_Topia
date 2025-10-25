@@ -48,28 +48,22 @@ const Blog = () => {
                             Read our latest articles on parenting, toy reviews, and creative play ideas to inspire your family.
                         </p>
                     </div>
-
-                    {/* Blog Post Grid */}
                     <div className="mt-12 grid gap-10 lg:grid-cols-3">
                         {blogPosts.map((post) => (
                             <div
                                 key={post.id}
                                 className="flex flex-col rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition duration-300 dark:bg-gray-800"
                             >
-                                {/* Image Container */}
                                 <a href={post.link} className="block relative h-60">
                                     <img
                                         className="h-full w-full object-cover"
                                         src={post.imageUrl}
                                         alt={post.title}
                                     />
-                                    {/* Category Badge */}
                                     <span className="absolute top-3 right-3 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-300">
                                         {post.category}
                                     </span>
                                 </a>
-
-                                {/* Content Body */}
                                 <div className="flex-1 p-6 flex flex-col justify-between">
                                     <div className="flex-1">
                                         <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
@@ -84,8 +78,6 @@ const Blog = () => {
                                             </p>
                                         </a>
                                     </div>
-
-                                    {/* Read More Button */}
                                     <div className="mt-6 flex justify-end">
                                         <a
                                             href={post.link}
@@ -99,13 +91,12 @@ const Blog = () => {
                         ))}
                     </div>
 
-                    {/* Main CTA to Blog Page */}
                     <div className="mt-16 text-center">
                         <a
-                            href="/blog"
+                            href="/addblog"
                             className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-amber-500 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition duration-150"
                         >
-                            See All Play Guides
+                            Add Blog
                         </a>
                     </div>
                 </div>
