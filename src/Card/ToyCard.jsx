@@ -1,18 +1,14 @@
 import React from "react";
 import { Link } from "react-router";
-import AuthContext from "../AuthContext/AuthContext";
 
 const ToyCard = ({ ratingData }) => {
     return (
-        <div  className="max-w-sm mb-10 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-sky-300 p-4">
-            {/* Thumbnail */}
+        <div  className="md:max-w-sm mb-10 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-sky-300 p-4">
             <img
                 src={ratingData.pictureURL}
                 alt=''
                 className="w-full h-48 object-cover rounded-xl"
             />
-
-            {/* Content */}
             <div className="mt-4 space-y-2">
                 <h2 className="text-lg font-semibold text-gray-800">{ratingData.toyName}</h2>
 

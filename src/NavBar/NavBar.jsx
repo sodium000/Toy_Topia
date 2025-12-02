@@ -4,7 +4,7 @@ import AuthContext from '../AuthContext/AuthContext';
 import Swal from 'sweetalert2';
 
 const NavBar = () => {
-    const { user, Logout } = use(AuthContext);
+    const { user, Logout, } = use(AuthContext);
 
     const singout = () => {
         Logout().then(() => {
@@ -18,10 +18,6 @@ const NavBar = () => {
             console.log(error)
         });
     }
-
-    console.log(user)
-
-
     return (
         <div className=''>
             <div className="  navbar bg-linear-to-r from-indigo-300 via-sky-400  to-pink-400 shadow-sm justify-around">

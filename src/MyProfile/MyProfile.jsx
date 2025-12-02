@@ -6,11 +6,13 @@ import { auth } from "../firebase/firebase.config";
 import Loader from "../Loader/Loader";
 import Swal from "sweetalert2";
 import { useTitle } from "../CustomeHook/Hook";
+import { useNavigate } from "react-router";
 
 
 
 const MyProfile = () => {
   useTitle("Myprofile")
+    let navigate = useNavigate();
   const [isUpdating, setIsUpdating] = useState(false);
   const { user, setUser, loading, Logout } = use(AuthContext)
   const [newDisplayName, setNewDisplayName] = useState(user?.displayName || "guest user");
@@ -21,26 +23,33 @@ const MyProfile = () => {
     return <Loader />;
   }
 
-    const singout = () => {
-            Logout().then(() => {
-                Swal.fire({
-                    title: "LogOut your Account",
-                    icon: "success",
-                    draggable: true
-    
-                });
-            }).catch((error) => {
-                console.log(error)
-            });
-        }
+  const singout = () => {
+    Logout().then(() => {
+      Swal.fire({
+        title: "LogOut your Account",
+        icon: "success",
+        draggable: true
+
+      });
+    }).catch((error) => {
+      console.log(error)
+    });
+  }
 
   const handleUpdate = () => {
 
     updateProfile(auth.currentUser, {
       displayName: newDisplayName, photoURL: currentPhotoURL
     }).then(() => {
+      Swal.fire({
+        title: "Update",
+        icon: "success",
+        draggable: true
+
+      });
       setUser(auth.currentUser)
       setIsUpdating(false)
+      navigate(`${location.state ? location.state : "/"}`);
     })
   };
 

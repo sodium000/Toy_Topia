@@ -27,17 +27,17 @@ const Banner = () => {
                 modules={[Autoplay, Pagination]}
                 className="mySwiper"
             >
-                <SwiperSlide><div className='h-[500px]'>
-                    <img src="https://i.ibb.co/Qv3wr1YT/disney-banneroriginal-66f8edd0eb03-original-format-webp.webp" alt="" />
+                <SwiperSlide><div className='h-[600px]'>
+                    <img src="https://i.ibb.co.com/Vcf4GFDc/banner1.webp" alt="" />
                     </div></SwiperSlide>
-                <SwiperSlide><div className='h-[500px]'>
-                    <img src="https://i.ibb.co/9kcqNqN1/Strip-Banner-5-original-format-webp.webp" alt="" />
+                <SwiperSlide><div className='h-[600px]'>
+                    <img src="https://i.ibb.co.com/B5tzxsxw/banner2.webp" alt="" />
                     </div></SwiperSlide>
-                <SwiperSlide><div className='h-[500px]'>
-                    <img src="https://i.ibb.co/YFFxnkCh/50-damaged-box1-4.webp" alt="" />
+                <SwiperSlide><div className='h-[600px]'>
+                    <img src="https://i.ibb.co.com/DDD368bq/banner3.webp" alt="" />
                     </div></SwiperSlide>
-                <SwiperSlide><div className='h-[500px]'>
-                    <img src="https://i.ibb.co/GQzcS1Qk/Labubu-Toy-Collection-Cover.webp" alt="" />
+                <SwiperSlide><div className='h-[600px]'>
+                    <img src="https://i.ibb.co.com/wZmzdR7m/banner4.webp" alt="" />
                     </div></SwiperSlide>
             </Swiper>
         </div>
