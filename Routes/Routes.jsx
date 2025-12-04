@@ -12,6 +12,8 @@ import Error from "../src/Error/Error";
 import MyProfile from "../src/MyProfile/MyProfile";
 import AboutUs from "../src/AboutUs/AboutUs";
 import AddBlog from "../src/Pages/AddBlog";
+import ContactUsToy from "../src/ContactUs/ContactUsToy";
+import LocationUs from "../src/LoctionUs/LocationUs";
 
 
 
@@ -38,6 +40,17 @@ const router = createBrowserRouter([
 
             },
             {
+                path: "/ContactUsToy",
+                Component: ContactUsToy
+
+            },
+            {
+                path: "/coverage",
+                Component: LocationUs,
+                loader : ()=> fetch('/warehouses.json').then(res=>res.json())
+
+            },
+            {
                 path: '/forgotpassword',
                 element: <Forgotpassword></Forgotpassword>
 
@@ -57,7 +70,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/toydetails/:id",
-        element: <PrivateLayout><ToyDetails></ToyDetails></PrivateLayout>,
+        element: <ToyDetails></ToyDetails>,
         loader: () => fetch("/toy.json"),
 
     },

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import Swal from "sweetalert2";
 import { useTitle } from "../CustomeHook/Hook";
 
 const ToyDetails = () => {
+     let navigate = useNavigate();
     
     const [toy, settoy] = useState({});
     const { id } = useParams();
@@ -38,16 +39,25 @@ const ToyDetails = () => {
             draggable: true
         });
     }
+    const ByeAlart = () => {
+        navigate(-1);
+        Swal.fire({
+            title: "Your data save in Database",
+            icon: "success",
+            draggable: true
+        });
+    }
 
 
     return (
-        <div className="min-h-screen bg-linear-to-br from-blue-600 via-emerald-500 to-violet-600 py-12 px-4 flex justify-center">
-            <div className="max-w-4xl w-full bg-white/80 backdrop-blur-md shadow-xl rounded-3xl overflow-hidden border border-gray-100">
+
+        <div className="min-h-screen bg-linear-to-br from-blue-600 via-emerald-500 to-violet-600 py-6 sm:py-8 md:py-12 px-4 sm:px-6 lg:px-8 flex justify-center">
+            <div className="max-w-4xl w-full bg-white/80 backdrop-blur-md shadow-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-100">
                 <div className="relative group">
                     <img
                         src={toy.pictureURL}
                         alt={toy.toyName}
-                        className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-md">
                         ${toy.price}
@@ -58,10 +68,10 @@ const ToyDetails = () => {
                     </div>
                 </div>
 
-                <div className="p-8 space-y-5">
+                <div className="p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                         <div>
-                            <h1 className="text-3xl font-bold text-gray-800">{toy.toyName}</h1>
+                            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">{toy.toyName}</h1>
                             <p className="text-gray-500 text-sm mt-1">
                                 Category: <span className="font-medium">{toy.subCategory}</span>
                             </p>
@@ -89,7 +99,7 @@ const ToyDetails = () => {
                         <p className="text-gray-600 leading-relaxed">{toy.description}</p>
                     </div>
                     <div className="pt-4 flex justify-center">
-                        <button className="btn btn-primary btn-wide text-white font-semibold text-lg hover:scale-105 transition-transform duration-300 shadow-md">
+                        <button onClick={ByeAlart} className="btn btn-primary btn-wide text-white font-semibold text-lg hover:scale-105 transition-transform duration-300 shadow-md">
                             🛒 Buy Now
                         </button>
                     </div>

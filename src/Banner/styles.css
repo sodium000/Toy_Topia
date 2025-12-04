@@ -8,12 +8,8 @@ body {
 }
 
 .ton {
-  background: #EEAECA;
-  font-family:
-    Helvetica Neue,
-    Helvetica,
-    Arial,
-    sans-serif;
+  background: #94bbe9;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #fff;
   margin: 0;
@@ -28,7 +24,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background:  radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  background: linear-gradient(to bottom right, #ffe3f2, #fff7d6, #e0f7ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,4 +35,5 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  max-width: 100%;
 }

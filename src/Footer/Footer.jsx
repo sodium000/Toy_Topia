@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="bg-[#1a1a1a] text-gray-300 text-sm">
-            <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-b border-gray-700">
+        <footer className=" bg-[radial-gradient(circle,rgba(238,174,202,1)_0%,rgba(148,187,233,1)_100%)]  text-sm rounded pb-5">
+            <div className=" container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 border-b border-gray-700">
                 <div>
                     <img
-                        src="https://i.ibb.co/n8rxr8RT/attachment-138432570.png"
+                        src="https://i.ibb.co.com/8Lgr5Xmn/logo9.jpg"
                         alt="RFL Logo"
                         className="w-16 mb-3"
                     />
@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
 
             {/* ======= Bottom Bar ======= */}
-            <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs">
                 <div className="space-x-4 mb-2 sm:mb-0">
                     <a href="#" className="hover:text-red-500">Terms of Use</a>
                     <a href="#" className="hover:text-red-500">Privacy</a>

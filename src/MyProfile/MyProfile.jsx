@@ -55,8 +55,8 @@ const MyProfile = () => {
 
   return (
 
-    <div className="min-h-screen bg-linear-to-br from-blue-100 to-indigo-900 flex items-center justify-center py-10 px-4 relative">
-      <div className="relative max-w-md w-full bg-white/80 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-2xl overflow-hidden p-8 text-center transition-all duration-500 transform hover:shadow-3xl">
+    <div className="min-h-screen bg-linear-to-br from-blue-100 to-indigo-900 flex items-center justify-center py-6 sm:py-8 md:py-10 px-4 sm:px-6 relative">
+      <div className="relative max-w-md w-full bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden p-6 sm:p-8 text-center transition-all duration-500 transform hover:shadow-3xl">
 
         <div className="absolute inset-0 -z-10 opacity-10 bg-[radial-gradient(circle_at_top,var(--tw-gradient-stops))] from-blue-900 via-pink-100 to-transparent"></div>
 
@@ -69,14 +69,14 @@ const MyProfile = () => {
                 "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
               }
               alt="User Profile"
-              className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-lg ring-4 ring-blue-300 transition-transform duration-300 hover:scale-105"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-white shadow-lg ring-4 ring-blue-300 transition-transform duration-300 hover:scale-105"
             />
             <div className="absolute bottom-0 right-0 bg-green-500 w-4 h-4 rounded-full border-2 border-white animate-pulse"></div>
           </div>
         </div>
 
-        <h2 className="text-3xl font-extrabold text-gray-900">{newDisplayName}</h2>
-        <p className="text-lg text-gray-600 mb-4">{user?.email}</p>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 wrap-break-word">{newDisplayName}</h2>
+        <p className="text-base sm:text-lg text-gray-600 mb-4 wrap-break-word">{user?.email}</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <button
             onClick={() => setIsUpdating(true)} // Open the update form
@@ -92,8 +92,8 @@ const MyProfile = () => {
 
       {isUpdating && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 backdrop-blur-sm transition-opacity duration-300">
-          <div className="bg-white rounded-xl shadow-2xl p-8 w-full max-w-sm transform scale-100 transition-transform duration-300 relative border-t-8 border-blue-500">
-            <h3 className="text-2xl font-bold mb-6 text-gray-800 text-center">Update Your Profile</h3>
+          <div className="bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-full max-w-sm transform scale-100 transition-transform duration-300 relative border-t-8 border-blue-500">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800 text-center">Update Your Profile</h3>
 
             <form onSubmit={(e) => { e.preventDefault(); handleUpdate(); }}>
               <div className="mb-4">

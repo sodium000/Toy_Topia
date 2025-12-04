@@ -7,11 +7,11 @@ const AddBlog = () => {
       let navigate = useNavigate();
     return (
         <div>
-            <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-br from-blue-100 to-purple-100">
-                <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-md">
-                    <h1 className="text-2xl font-bold text-center mb-6 text-purple-700">Add a New Blog Comment</h1>
+            <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-br from-blue-100 to-purple-100 px-4 sm:px-6 py-8 sm:py-12">
+                <div className="bg-white shadow-lg rounded-2xl p-6 sm:p-8 w-full max-w-md">
+                    <h1 className="text-xl sm:text-2xl font-bold text-center mb-4 sm:mb-6 text-purple-700">Add a New Blog Comment</h1>
 
-                    <form className="space-y-4">
+                    <form className="space-y-3 sm:space-y-4">
                         <input
                             type="text"
                             placeholder="Toy Name"

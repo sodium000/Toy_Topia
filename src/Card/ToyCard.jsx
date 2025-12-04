@@ -3,16 +3,16 @@ import { Link } from "react-router";
 
 const ToyCard = ({ ratingData }) => {
     return (
-        <div  className="md:max-w-sm mb-10 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-sky-300 p-4">
+        <div  className="w-full max-w-full mb-2 bg-[radial-gradient(circle,rgba(238,174,202,1)_0%,rgba(148,187,233,1)_100%)] bg-opacity-95 text-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 p-3 sm:p-4">
             <img
                 src={ratingData.pictureURL}
                 alt=''
-                className="w-full h-48 object-cover rounded-xl"
+                className="w-full h-40 sm:h-44 md:h-48 object-cover rounded-xl"
             />
-            <div className="mt-4 space-y-2">
-                <h2 className="text-lg font-semibold text-gray-800">{ratingData.toyName}</h2>
+            <div className="mt-3 sm:mt-4 space-y-2">
+                <h2 className="text-base sm:text-lg font-semibold line-clamp-2">{ratingData.toyName}</h2>
 
-                <div className="flex justify-between text-sm text-gray-600">
+                <div className="flex justify-between text-sm">
                     <p>
                         ⭐ <span className="font-medium">{ratingData.rating}</span>
                     </p>

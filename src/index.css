@@ -2,7 +2,7 @@
 @plugin "daisyui";
 
 .my-btn{
-    @apply  btn w-full bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold border-none hover:scale-105 transition-transform duration-200;
+    @apply  btn w-full bg-[radial-gradient(circle,rgba(238,174,202,1)_0%,rgba(148,187,233,1)_100%)]  text-black font-semibold border-none hover:scale-105 transition-transform duration-200;
 }
 
 a.active{
